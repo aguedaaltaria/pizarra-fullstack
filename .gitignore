@@ -1,0 +1,10 @@
+# Ignorar variables de entorno (secretos)
+.env
+
+# Ignorar la base de datos local SQLite
+*.db
+*.sqlite3
+
+# Ignora archivos temporales de Python 
+__pycache__/
+*.pyc
