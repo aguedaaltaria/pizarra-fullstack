@@ -1,6 +1,11 @@
 # Ignorar variables de entorno (secretos)
 .env
 
+# Ignora entorno virtual de python
+.venv/
+venv/
+ENV/
+
 # Ignorar la base de datos local SQLite
 *.db
 *.sqlite3
