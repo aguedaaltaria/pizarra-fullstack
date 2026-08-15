@@ -42,8 +42,11 @@
         </section>
         <section class="tarjeta seccion-tabla">
             <div class="cabecera-tabla">
-                <h2>Usuarios Registrados</h2>
-                <span class="insignia" id="contador-usuarios">0 usuarios</span>
+                <div>
+                    <h2>Usuarios Registrados</h2>
+                    <span class="insignia" id="contador-usuarios">0 usuarios</span>
+                </div>
+                <button type="button" id="boton-vaciar" class="boton-peligro-suave">Vaciar Tabla</button>
             </div>
             <div class="tabla-envoltorio">
                 <table class="tabla-usuarios">
@@ -53,15 +56,11 @@
                             <th>Nombre Completo</th>
                             <th>Correo</th>
                             <th>Rol</th>
+                            <th>Acciones</th> 
                         </tr>
                     </thead>
                     <tbody id="cuerpo-tabla">
-                        <tr>
-                            <td>1</td>
-                            <td>Águeda Guzmán</td>
-                            <td>agueda@ejemplo.com</td>
-                            <td><span class="etiqueta-rol rol-admin">administrador</span></td>
-                        </tr>
+                        <!-- Se inserta con GET desde main.js -->
                     </tbody>
                 </table>
             </div>
@@ -72,5 +71,6 @@
             <p>Proyecto Integrador de Repaso Full Stack</p>
         </div>
     </footer>
+    <script src="/static/main.js"></script>
 </body>
 </html>

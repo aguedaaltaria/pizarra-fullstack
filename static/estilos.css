@@ -212,3 +212,49 @@ body {
 .rol-admin { background-color: #fed7aa; color: var(--color-admin); }
 .rol-editor { background-color: #d1fae5; color: var(--color-editor); }
 .rol-usuario { background-color: #e6dcd0; color: var(--color-usuario); }
+
+/* Botones de acciones en la tabla */
+.contenedor-acciones {
+    display: flex;
+    gap: 6px;
+}
+
+.boton-accion {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.boton-accion:hover {
+    opacity: 0.85;
+}
+
+.boton-editar {
+    background-color: #fde68a;
+    color: #78350f;
+}
+
+.boton-eliminar {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.boton-peligro-suave {
+    background-color: transparent;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton-peligro-suave:hover {
+    background-color: #fee2e2;
+}
