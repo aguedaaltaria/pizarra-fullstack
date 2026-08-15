@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import sqlite3
 
 aplicacion = Flask(__name__)
@@ -9,6 +9,10 @@ def obtener_conexion_bd():
     return conexion
 
 # GET
+@aplicacion.route('/')
+def inicio():
+    return render_template('index.html')
+
 @aplicacion.route('/api/usuarios', methods=['GET'])
 def obtener_usuarios():
     conexion = obtener_conexion_bd()

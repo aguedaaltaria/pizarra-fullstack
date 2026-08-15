@@ -1,0 +1,214 @@
+/* ==========================================================================
+   1. Variables Globales (Paleta Marrón Cálido + Acento Amarillo)
+   ========================================================================== */
+   :root {
+    --color-fondo: #f5efe6;          /* Fondo beige / marrón claro */
+    --color-tarjeta: #fffdf9;        /* Blanco cálido para tarjetas y cabeceras */
+    --color-primario: #d97706;       /* Amarillo ámbar / mostaza cálido para botones */
+    --color-primario-hover: #b45309; /* Mostaza más oscuro al pasar el cursor */
+    --color-texto: #3d2c1d;          /* Marrón café oscuro para texto principal */
+    --color-texto-suave: #78593d;    /* Marrón medio para subtítulos y bordes */
+    --color-borde: #e6dcd0;          /* Borde marrón suave */
+    --color-admin: #7c2d12;          /* Marrón terracota */
+    --color-editor: #065f46;         /* Verde oscuro complementario */
+    --color-usuario: #78593d;        /* Marrón suave */
+    --radio-borde: 12px;
+    --sombra: 0 4px 6px -1px rgba(61, 44, 29, 0.08), 0 2px 4px -1px rgba(61, 44, 29, 0.04);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   2. Cabecera y Pie
+   ========================================================================== */
+.cabecera {
+    background-color: var(--color-tarjeta);
+    border-bottom: 1px solid var(--color-borde);
+    padding: 24px 0;
+    text-align: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    color: var(--color-texto);
+}
+
+.subtitulo {
+    color: var(--color-texto-suave);
+    font-size: 0.95rem;
+    margin-top: 4px;
+}
+
+.pie {
+    margin-top: auto;
+    background-color: var(--color-tarjeta);
+    border-top: 1px solid var(--color-borde);
+    padding: 16px 0;
+    text-align: center;
+    color: var(--color-texto-suave);
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   3. Disposición Principal (Layout con CSS Grid)
+   ========================================================================== */
+.principal {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px 0;
+}
+
+@media (min-width: 768px) {
+    .principal {
+        grid-template-columns: 350px 1fr;
+        align-items: start;
+    }
+}
+
+.tarjeta {
+    background-color: var(--color-tarjeta);
+    border-radius: var(--radio-borde);
+    padding: 24px;
+    box-shadow: var(--sombra);
+    border: 1px solid var(--color-borde);
+}
+
+.tarjeta h2 {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+    color: var(--color-texto);
+}
+
+/* ==========================================================================
+   4. Formulario (Flexbox)
+   ========================================================================== */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.grupo-campo {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.grupo-campo label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-texto);
+}
+
+.grupo-campo input,
+.grupo-campo select {
+    padding: 10px 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    outline: none;
+    background-color: #ffffff;
+    color: var(--color-texto);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.grupo-campo input:focus,
+.grupo-campo select:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
+}
+
+.boton-guardar {
+    margin-top: 8px;
+    padding: 12px;
+    background-color: var(--color-primario);
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton-guardar:hover {
+    background-color: var(--color-primario-hover);
+}
+
+/* ==========================================================================
+   5. Tabla de Registros
+   ========================================================================== */
+.cabecera-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.insignia {
+    background-color: var(--color-fondo);
+    color: var(--color-texto-suave);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.tabla-envoltorio {
+    overflow-x: auto;
+}
+
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabla-usuarios th,
+.tabla-usuarios td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--color-borde);
+    font-size: 0.9rem;
+}
+
+.tabla-usuarios th {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-weight: 600;
+}
+
+.tabla-usuarios tr:hover {
+    background-color: #fbf8f3;
+}
+
+/* Etiquetas de roles con temática cálida */
+.etiqueta-rol {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.rol-admin { background-color: #fed7aa; color: var(--color-admin); }
+.rol-editor { background-color: #d1fae5; color: var(--color-editor); }
+.rol-usuario { background-color: #e6dcd0; color: var(--color-usuario); }

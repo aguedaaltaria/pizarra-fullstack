@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizarra Fullstack - Gestión de Usuarios</title>
+    <link rel="stylesheet" href="/static/estilos.css">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="contenedor">
+            <h1 class="logo">📋 Pizarra Fullstack</h1>
+            <p class="subtitulo">Panel de administración y control de usuarios</p>
+        </div>
+    </header>
+    <main class="contenedor principal">
+        <section class="tarjeta seccion-formulario">
+            <h2>Registrar Nuevo Usuario</h2>
+            <form id="formulario-usuario" class="formulario">
+                <div class="grupo-campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Ana" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" name="apellido" placeholder="Ej. Pérez" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="correo">Correo Electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ej. ana@ejemplo.com" required>
+                </div>
+                <div class="grupo-campo">
+                    <label for="rol">Rol</label>
+                    <select id="rol" name="rol">
+                        <option value="usuario">Usuario</option>
+                        <option value="editora">Editora</option>
+                        <option value="administrador">Administrador</option>
+                    </select>
+                </div>
+                <button type="submit" class="boton-guardar">Guardar Usuario</button>
+            </form>
+        </section>
+        <section class="tarjeta seccion-tabla">
+            <div class="cabecera-tabla">
+                <h2>Usuarios Registrados</h2>
+                <span class="insignia" id="contador-usuarios">0 usuarios</span>
+            </div>
+            <div class="tabla-envoltorio">
+                <table class="tabla-usuarios">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre Completo</th>
+                            <th>Correo</th>
+                            <th>Rol</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpo-tabla">
+                        <tr>
+                            <td>1</td>
+                            <td>Águeda Guzmán</td>
+                            <td>agueda@ejemplo.com</td>
+                            <td><span class="etiqueta-rol rol-admin">administrador</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <footer class="pie">
+        <div class="contenedor">
+            <p>Proyecto Integrador de Repaso Full Stack</p>
+        </div>
+    </footer>
+</body>
+</html>
